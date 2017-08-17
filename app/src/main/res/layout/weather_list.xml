@@ -1,28 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardUseCompatPadding="true"
+    android:id="@+id/cv_adapter_weather"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:clickable="true"
-    android:layout_margin="8dp">
-    
+    app:cardUseCompatPadding="true"
+    app:contentPadding="16dp">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:background="@drawable/gradient">
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/img_adapter_weather"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/padding_16"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_adapter_weather_date"
+                style="?android:textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Minggu, 13 Agustus 2017"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/txt_adapter_weather_desc"
+                style="?android:textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cerah Berawan" />
+        </LinearLayout>
 
         <TextView
-            android:id="@id/txt_weather_desc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_17_drajat"
-            android:background="@color/colorAccent"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            style="?android:textAppearanceLargeInverse"/>
+            android:id="@+id/txt_adapter_weather_temperature"
+            style="?android:textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="end|center_vertical"
+            android:text="38"
+            android:textSize="36sp" />
     </LinearLayout>
-</LinearLayout>
+
+</android.support.v7.widget.CardView>

@@ -10,45 +10,43 @@ import android.widget.TextView;
 import java.text.CollationElementIterator;
 import java.text.StringCharacterIterator;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
 
 
-    private TextView nMainToday;
-    private ImageView nMainWeater;
-    private TextView nMainweatherdesc;
-    private TextView nMainWtemperatur;
-    private RecyclerView nMainWeatherList;
-    private LinearLayoutManager LayoutManager;
+    @BindView(R.id.txt_day)
+    TextView mWeatherDay;
+    @BindView(R.id.img_weather)
+    ImageView mWeatherImage;
+    @BindView(R.id.txt_weather_desc)
+    TextView mWeatherDesc;
+    @BindView(R.id.txt_adapter_weather_temperature)
+    TextView mWeatherTemperature;
+    @BindView(R.id.rv_Weather_list)
+    RecyclerView mWeatherList;
+
     private WeatherAdapter mWeatherAdapter;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initViewBaru();
+    ButterKnife.bind(this);
 
-    }
+    mWeatherDay.setText("Minggu");
+        mWeatherImage.setImageResource(R.mipmap.ic_launcher_round);
+        mWeatherDesc.setText("Cerah Banget");
+        mWeatherTemperature.setText("32 Derajat");
 
-    private void initViewBaru() {
-        nMainToday =(TextView) findViewById(R.id.txt_day);
-        nMainWeater =(ImageView) findViewById(R.id.img_weather);
-        nMainweatherdesc =(TextView) findViewById(R.id.txt_weather_desc);
-        nMainWtemperatur =(TextView) findViewById(R.id.txt_weather_temperature);
-        nMainWeatherList =(RecyclerView) findViewById(R.id.rv_Weather_list);
+    LinearLayoutManager mWeatherLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        mWeatherList.setLayoutManager(mWeatherLayoutManager);
+        mWeatherList.setHasFixedSize(true);
 
-        nMainToday.setText("Minggu");
-        nMainWtemperatur.setText("32 Derajat");
-        nMainweatherdesc.setText("Petir Siang Bolong");
-
-        LayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
-        nMainWeatherList.setLayoutManager(LayoutManager);
-        nMainWeatherList.setHasFixedSize(true);
-
-        mWeatherAdapter = new WeatherAdapter();
-        nMainWeatherList.setAdapter(mWeatherAdapter);
+    mWeatherAdapter = new WeatherAdapter();
+        mWeatherList.setAdapter(mWeatherAdapter);
 
 
         }
