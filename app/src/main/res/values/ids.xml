@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="txt_day" type="id">day</item>
+    <item name="img_weather" type="id">img_weather</item>
+    <item name="Weather_list" type="id">Weather_list</item>
+    <item name="rv_Weather_list" type="id">rv_weather_list</item>
+</resources>

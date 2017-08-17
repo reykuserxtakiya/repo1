@@ -3,4 +3,6 @@
     <string name="sunday">sunday</string>
     <string name="_17_drajat">17 Drajat</string>
     <string name="moderate_rain">Moderate Rain</string>
+    <string name="Sunday">Sunday</string>
+    <string name="cuaca_hari_ini">Cuaca Hari Ini</string>
 </resources>
