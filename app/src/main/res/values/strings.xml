@@ -1,8 +1,6 @@
 <resources>
-    <string name="app_name">My sunsine</string>
-    <string name="sunday">sunday</string>
-    <string name="_17_drajat">17 Drajat</string>
+    <string name="app_name">My Beautiful Sunshine</string>
+    <string name="sunday">Sunday</string>
     <string name="moderate_rain">Moderate Rain</string>
-    <string name="Sunday">Sunday</string>
-    <string name="cuaca_hari_ini">Cuaca Hari Ini</string>
+    <string name="_17_derajat">17 Derajat</string>
 </resources>

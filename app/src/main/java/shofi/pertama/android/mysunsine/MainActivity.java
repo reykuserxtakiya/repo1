@@ -7,8 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.text.CollationElementIterator;
-import java.text.StringCharacterIterator;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -16,9 +14,9 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
 
-    @BindView(R.id.txt_day)
+    @BindView(R.id.txt_adapter_weather_date)
     TextView mWeatherDay;
-    @BindView(R.id.img_weather)
+    @BindView(R.id.img_adapter_weather)
     ImageView mWeatherImage;
     @BindView(R.id.txt_weather_desc)
     TextView mWeatherDesc;
@@ -27,14 +25,15 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.rv_Weather_list)
     RecyclerView mWeatherList;
 
-    private WeatherAdapter mWeatherAdapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
     ButterKnife.bind(this);
+
+        weatherControler = new WeatherControler();
+        weatherControler.getWeatherControler();
 
     mWeatherDay.setText("Minggu");
         mWeatherImage.setImageResource(R.mipmap.ic_launcher_round);
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         mWeatherList.setLayoutManager(mWeatherLayoutManager);
         mWeatherList.setHasFixedSize(true);
 
-    mWeatherAdapter = new WeatherAdapter();
+        WeatherAdapter mWeatherAdapter = new WeatherAdapter();
         mWeatherList.setAdapter(mWeatherAdapter);
 
 
